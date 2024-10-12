@@ -349,7 +349,7 @@ nav ul li a.active,nav ul li a:hover{
     margin:20px;
     margin-top: 30px;
     display:flex;
-    padding:20px;
+    padding:10px;
     justify-content: center;
     background-color: lightgreen;
     box-shadow: 0px 2px 5px rgba(0,0,0.1);
@@ -497,19 +497,16 @@ footer {
 .footer-bottom p {
     margin: 0;
 }
-
+#menu-toggler:checked ~ .sidebar {
+    display: block;
+} 
 /* Responsive */
 @media (max-width: 768px) {
     .sidebar {
         display: none;
     }
-    .contact-us{
-        width:100%;
-    }
-    #menu-toggler:checked ~ .sidebar {
-        display: block;
-    }
-    
+
+       
     .footer-container {
         flex-direction: column;
         align-items: center;

@@ -503,6 +503,9 @@ footer {
     .sidebar {
         display: none;
     }
+    .contact-us{
+        width:100%;
+    }
     #menu-toggler:checked ~ .sidebar {
         display: block;
     }

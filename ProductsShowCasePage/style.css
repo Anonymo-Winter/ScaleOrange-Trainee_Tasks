@@ -275,7 +275,7 @@ nav ul li a.active,nav ul li a:hover{
     min-height:100vh;
     background-color: rgb(240, 223, 128);
     box-shadow: #2c3e50 0px 2px 6px ;
-
+    position:relative;
 }
 .sidebar{
     display:flex;
@@ -289,6 +289,7 @@ nav ul li a.active,nav ul li a:hover{
     position:relative;
 }
 .filters{
+    margin-top:25px;
     padding:10px;
 }
 .filters .menu{
@@ -305,13 +306,15 @@ nav ul li a.active,nav ul li a:hover{
 }
 .menu-toggler{
     position:absolute;
-    right:5%;
+    left:2%;
     top:2%;
     font-size:20px;
-    border:1px solid silver;
+    background:black;
+    color:white;
     padding:5px;
     float:right;
     border-radius: 5px;
+    z-index:100;
 }
 
 .main-bar{
@@ -320,6 +323,7 @@ nav ul li a.active,nav ul li a:hover{
     overflow-y: auto;
     border:1px solid silver;
     padding:10px;
+    transition:all .5s;
 }
 .main-bar .main-product{
     display:flex;
@@ -496,6 +500,13 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+    #menu-toggler:checked ~ .sidebar {
+        display: block;
+    }
+    
     .footer-container {
         flex-direction: column;
         align-items: center;
@@ -520,7 +531,7 @@ footer {
 
 @media (max-width: 992px) {
     label.logo{
-        font-size:30px;
+        font-size:24px;
         padding-left: 50px;
     }
     nav ul li a{
@@ -561,11 +572,21 @@ footer {
     #check:checked ~ul{
         left:0;
     }
+
     .top-products,.top-product{
-        height: 300px;
+        min-height:280px;
     }
+    .great-deals{
+        margin:0;
+        margin-top:10px;
+    }
+    .brand-slider{
+        width:100%;
+        margin:10px 0;
+    }
+
     .product{
-        min-height: 260px;
+        min-height: 280px;
         min-width: 14em;
     }
     .product p{

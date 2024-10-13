@@ -1,61 +1,98 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+*{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
 }
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    background-image: url('./snake-game.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 100vh;
-}
-body h1 {
-    font-weight: bolder;
-    text-transform: uppercase;
-    text-align: center;
-}
-.container {
-    display: flex;
-    flex-direction: column;
-    width: 70vmin;
-    height: 75vmin;
-    background-color: #0b4682;
-    overflow: hidden;
-}
-.top-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: #B8C6DC;
-    font-size: 1.2rem;
-    padding: 15px 20px;
-}
-.play-board {
-    background-color: #111a2d;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template: repeat(30, 1fr) / repeat(30, 1fr);
-}
-.food {
-    background-color: red;
-    transition: background-color 0.3s ease-in-out;
-}
-.snake {
-    background-color: #6a9ab0;
-    transition: background-color 0.3s ease-in-out;
-}
-.buttons {
+
+body{
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 100vh;
+    background: #e3f2fd;
+    background-image: url('./snake-game.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-.play-btn, .pause-btn, .restart-btn {
-    padding: 10px 20px;
+
+.wrapper{
+    width: 65vmin;
+    height: 70vmin;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: center;
+    background: #293447;
+    border-radius: 5px;
+    box-shadow: 0 20px 40px rgba(52, 87, 220, 0.2);
+}
+
+.game-details{
+    color: #b8c6dc;
+    font-weight: 500;
     font-size: 1.2rem;
-    border-radius: 15px;
-    margin: 5px;
+    padding: 20px 27px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.play-board{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    background: #212837;
+    grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+}
+
+.play-board .food{
+    background: #ff003d;
+}
+.play-board .secretfood{
+    background: yellow;
+    border:1px solid #eaeaea;
+    box-shadow:0px 5px 20px wheat;
+    border-radius:50%;
+}
+
+.play-board .head{
+    background: #60cbff;
+}
+
+.controls{
+    display: none;
+    justify-content: space-between;
+}
+
+.controls i{
+    padding: 25px 0;
+    text-align: center;
+    font-size: 1.3rem;
+    color: #b8c6dc;
+    width: calc(100% / 4);
+    cursor: pointer;
+    border-right: 1px solid #171b26;
+}
+
+@media screen and (max-width: 800px) {
+    .wrapper{
+        width: 90vmin;
+        height: 115vmin;
+    }
+
+    .game-details{
+        font-size: 1rem;
+        padding: 15px 27px;
+    }
+
+    .controls{
+        display: flex;
+    }
+
+    .controls i{
+        padding: 15px 0;
+        font-size: 1rem;
+    }
 }

@@ -357,6 +357,9 @@ nav ul li a:hover {
 }
 
 .main-bar {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
     flex: 1;
     padding: var(--padding-medium);
     overflow-y: auto;
@@ -384,7 +387,10 @@ nav ul li a:hover {
 }
 
 .main-product .product {
-    font-size:25px;
+    flex: 1 1 250px;
+    height: 350px;
+    max-width: 50%;
+    font-size: 25px;
     align-items: start;
     background-color: var(--white);
     border: 1px solid #ccc;
@@ -528,15 +534,72 @@ footer {
 .footer-bottom p {
     margin: 0;
 }
-
+/* 
 .page-div{
     display:flex;
     width:100%;
-    justify-content: end;
+    justify-content: center;
+    padding:10px;
 }
-/* .page-div input{
 
+.page-div button{
+    padding:10px;
+    margin-right:10px;
+    color:var(--white);
+    outline: none;
+    border:none;
+    background-color: var(--button-bg);
+    background-color: var(--button-bg);
+}
+.page-div button{
+    padding:10px;
+    margin-right:10px;
+    color:var(--white);
+    outline: none;
+    border:none;
+    background-color: var(--button-bg);
+    border: 1px solid var(--button-bg);
+
+}
+
+.page-div button:hover{
+    color:var(--button-hover-bg);
+    background-color: var(--white);
+    border: 1px solid var(--button-bg);
 } */
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.pagination a {
+    background-color: white;
+    color: #333;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin: 0 4px;
+    border-radius: 4px;
+    border: 1px solid grey;
+    font-size: 16px;
+}
+
+.pagination a:hover {
+    background-color: #4CAF50;
+    color:white;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid black;
+    box-shadow:0px 4px 10px grey;
+}
+
+.pagination a.disabled {
+    color: #ccc;
+    pointer-events: none;
+}
 /* Extra Large Devices (Desktops, 1200px and up) */
 @media (max-width: 1200px) {
     .top-products,
@@ -666,12 +729,12 @@ footer {
     }
     .sidebar {
         position: absolute;
+        padding-top:15px;
         top: -300px;
         width: 100%;
         transition: 1s;
     }
     
-
     #menu-toggler:checked ~.sidebar{
         top:18%;
         display:block;
